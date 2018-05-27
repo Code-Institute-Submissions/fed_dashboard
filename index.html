@@ -16,6 +16,7 @@
     <script type="text/javascript" src="js/crossfilter.min.js"></script>
     <script type="text/javascript" src="js/dc.min.js"></script>
     <script type="text/javascript" src="js/queue.min.js"></script>
+    <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/graph.js"></script>
 
 </head>
@@ -86,12 +87,12 @@
                  <div class="col-xs-12 col-sm-2 text-center" id= "percent-pieChart6" class = "custom-chart"> <h4>Fig.f Criterion 6</h4></div>  
             </div>
             <div class="row">
-              <div class="col-xs-12 col-sm-12 text-center"><p>Fig.7 illustrates that female pupils do better at all levels and are significantly better at achieving the higher grades.</p></div>
-              
+              <div class="col-xs-12 col-sm-8 text-center"><p>Fig.7 illustrates that female pupils do better at all levels and are significantly better at achieving the higher grades.</p></div>
+              <div class="col-xs-12 col-sm-4 text-center"> <button type="button" id="criteria_key" class="btn btn-info btn-lg">Hide / Show Criteria Key</button></div>
         </div>
         </div>
         </section>  
-        <section class = "section">
+        <section id = "key" class = "section">
             <div class = "row criteria-key text-center">
                     <div class = "col-xs-12 col-sm 12">
                       <p class = "text-info">Criterion 1: Candidates who received a minimum of 5 grade D3s (40 - 49.9%) at any level</p>
@@ -102,14 +103,15 @@
                       <p class = "text-info">Criterion 6: Candidates who received a minimum of 6 grade C3s (55 - 59.9) on higher papers of which 3 or more were grade A2s (85 - 89.9)or above</p>
                   </div>
                 </div>
+               
       </section>
       <footer class ="footer text-center">
            <div class="col-xs-12 col-sm-12 text-center"><h5>Dataset License information</h5></div> 
            <p class="info-source">Dataset used published by the Department of Education and Skills and sourced from https://data.gov.ie/dataset. It is licensed under Creative Commons Attribution 4.0.</p>
-            <p> Various datasets were used and compiled into a json format.View public license summary </span><a href="data/license.pdf" target="_blank" class="license-pdf"><i class="fa fa-download" aria-hidden="true"></i></a></span></p>
+            <p> The data was downloaded in csv format and converted into a json format.View public license summary </span><a href="data/license.pdf" target="_blank" class="license-pdf"><i class="fa fa-download" aria-hidden="true"></i></a></span></p>
             <p class ="license-link"><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">Click here to View Full License online</a></p>
       </footer>
     
-    
+    <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

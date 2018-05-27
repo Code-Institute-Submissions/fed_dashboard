@@ -67,26 +67,41 @@ p {
 .gender {
     font-weight: 400;     
 }
-
-.criteria-key {
-    font-family: 'Roboto', sans-serif;
-    font-size: 25px;
-   background-color: white;
-   font-weight: 700;
-   padding: 0;
+.btn-info {
+    border-radius: 50%;
+    border: none;
+    color: black;
+    font-weight: 400;
 }
+.btn-info:focus {
+     box-shadow: none;
+     outline: none;
+     color: black;
+}
+
+.text-info {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    background-color: white;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+/*.text-info {
+    text-transform: uppercase;
+}*/
 footer {
     background-color: #8b9dc3;
     color: white;
     padding: 0;
 }
 .fa-download {
-	width: 32px;
-    height: 32px;
-    padding: 9px;
+	width: 24px;
+    height: 24px;
+    padding: 5px;
     border-radius: 50%;
-    font-size: 1.2em;
-    line-height: 14px;
+    font-size: 1.0em;
+    line-height: 12px;
     color: #fafafa;
     background:  #FF6347;
      -moz-transition: all .35s ease-in-out;
