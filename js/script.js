@@ -4,7 +4,7 @@ $(document).ready(function() {
         $("#key").slideToggle('1000');
     });
 
-  //method chaining to add fade to button on mouserenter and mouseleave 
+  //add fade to button id on mouserenter and mouseleave 
     $("#criteria_key").mouseenter(function(){
         $('#criteria_key').fadeTo(1000, 0.5);
     });

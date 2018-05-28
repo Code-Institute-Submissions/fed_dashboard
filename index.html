@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pupils in Secondary Level Education</title>
-
+    <title>Pupils Sitting Final Examinations at Secondary Level</title>
+    
+    <!--========== Stylesheets for Charting Dashboard ==========-->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="css/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-   <!-- <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">-->
     <link rel="stylesheet" href="css/style.css" type="text/css" />
     
+   <!--========== dc-crossfilter javascript files==========--> 
     <script type="text/javascript" src="js/d3.min.js"></script>
     <script type="text/javascript" src="js/crossfilter.min.js"></script>
     <script type="text/javascript" src="js/dc.min.js"></script>
@@ -19,23 +20,35 @@
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
     <script type="text/javascript" src="js/graph.js"></script>
 
+<!--========== Load jasmine framework ==========-->   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine-html.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/boot.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.7.0/jasmine.css" />
+   
+    
+     <!--========== Load test calculator ==========-->
+    <script type="text/javascript" src="spec/testSpec.js"></script>
+    
 </head>
 <body>
+<!--========== Section header ==========-->
     <section class="section-header">
            <h1 class = "text-center">Distribution of Leaving Certificate Results by Gender Republic of Ireland 2000 - 2016</h1>
              <div class="container-fluid">      
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
-                         <h2 class="section-heading">Total Attending School</h2>
-                          <div id="gender-selector"></div>
+                         <h2 class="section-heading text-center">Total Attending School</h2>
+                          <div id="gender-selector" class = "text-center"></div>
                     </div>
                     <div class="col-xs-12 col-sm-6">
-                         <h2 class="section-heading">Total Sitting the Final Exam</h2><span><i class="fa fa-female fa-gender" aria-hidden="true"></i> <span class="number-box" id="sitting-females"></span>
-                         <i class=" fa fa-male fa-gender" aria-hidden="true"></i> <span class="number-box" id="sitting-males"></span></span>
+                         <h2 class="section-heading text-center">Total Sitting the Final Exam</h2><span><i class="fa fa-female fa-gender" aria-hidden="true"></i> <span class="number-box" id="sitting-females"></span>
+                         <i class=" fa fa-male fa-gender" aria-hidden="true"></i> <span class = "number-box" id="sitting-males"></span></span>
                     </div>  
                 </div>  
              </div>
      </section>
+    <!--========== Chart Section ==========-->
     <section class="section">
         <div class="container-fluid">      
           <div class="row">
@@ -48,6 +61,7 @@
         </div>
         </div>
     </section>
+     <!--========== Chart Section ==========-->
     <section class="section">
         <div class="container">
            <div class="row">
@@ -61,6 +75,7 @@
             </div>
         </div>
         </section>
+         <!--========== Chart Section ==========-->
     <section class="section">
         <div class="container">
              <div class="row">
@@ -68,17 +83,17 @@
                  <div class="col-xs-12 col-sm-9 text-center" id="crit-composite-chart" class="custom-chart"><h3>Fig.6 Annual Results by Gender 2000 - 2016</h3></div>  
             </div>
             <div class="row">
-              <div class="col-xs-12 col-sm-4 text-center"><p>Fig.5 above indicates that female pupils perform better at achieving higher grades.</p></div>
+              <div class="col-xs-12 col-sm-4 text-center"><p>Fig.5 above indicates that more female pupils achieve the higher grades.</p></div>
               <div class="col-xs-12 col-sm-8 text-center"><p>Fig.6 above shows a sharp increase in numbers achieving  the basic grade (both genders) at the expense of achieving criteria 2 and 3 in 2014.</p></div>
         </div>
         </div>
     </section>
+     <!--========== Chart Section ==========-->
     <section class="section">
         <div class="container">
            <div class="row">
               <div><h3 class="section-heading text-center">Fig.7 Percentage Grades by Gender</h3><i class="fa fa-female fa-gender" aria-hidden="true"></i> <span><strong></strong>Female</strong></span>
                          <i class="fa fa-male fa-gender" aria-hidden="true"></i> <span>Male</span></div>
-                 
                  <div class="col-xs-12 col-sm-2 text-center" id="percent-pieChart1" class="custom-chart"><h4>Fig.a Criterion 1</h4></div>
                  <div class="col-xs-12 col-sm-2 text-center" id= "percent-pieChart2" class = "custom-chart"> <h4>Fig.b Criterion 2</h4></div>   
                  <div class="col-xs-12 col-sm-2 text-center" id="percent-pieChart3" class="custom-chart"><h4>Fig.c Criterion 3</h4></div>
@@ -87,11 +102,12 @@
                  <div class="col-xs-12 col-sm-2 text-center" id= "percent-pieChart6" class = "custom-chart"> <h4>Fig.f Criterion 6</h4></div>  
             </div>
             <div class="row">
-              <div class="col-xs-12 col-sm-8 text-center"><p>Fig.7 illustrates that female pupils do better at all levels and are significantly better at achieving the higher grades.</p></div>
+              <div class="col-xs-12 col-sm-8 text-center"><p>Fig.7 illustrates that while more male pupils achieve the basic grades, significantly more female pupils achieve the higher grades.</p></div>
               <div class="col-xs-12 col-sm-4 text-center"> <button type="button" id="criteria_key" class="btn btn-info btn-lg">Hide / Show Criteria Key</button></div>
         </div>
         </div>
-        </section>  
+     <!--========== Criteria Key Section ==========-->
+     </section>  
         <section id = "key" class = "section">
             <div class = "row criteria-key text-center">
                     <div class = "col-xs-12 col-sm 12">
@@ -103,15 +119,16 @@
                       <p class = "text-info">Criterion 6: Candidates who received a minimum of 6 grade C3s (55 - 59.9) on higher papers of which 3 or more were grade A2s (85 - 89.9)or above</p>
                   </div>
                 </div>
-               
       </section>
+       <!--========== Footer License Section ==========-->        
+   
       <footer class ="footer text-center">
            <div class="col-xs-12 col-sm-12 text-center"><h5>Dataset License information</h5></div> 
            <p class="info-source">Dataset used published by the Department of Education and Skills and sourced from https://data.gov.ie/dataset. It is licensed under Creative Commons Attribution 4.0.</p>
             <p> The data was downloaded in csv format and converted into a json format.View public license summary </span><a href="data/license.pdf" target="_blank" class="license-pdf"><i class="fa fa-download" aria-hidden="true"></i></a></span></p>
             <p class ="license-link"><a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">Click here to View Full License online</a></p>
       </footer>
-    
+   
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 </html>

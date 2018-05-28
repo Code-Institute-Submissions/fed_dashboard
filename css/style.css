@@ -8,7 +8,6 @@ h1 {
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    padding-bottom: 10px;
     margin: 0;
 }
 h2 {
@@ -45,24 +44,30 @@ p {
 }
 .section-header {
     background-color: #dfe3ee; 
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin: 0;
 }
-.section-heading, #gender-selector {
-	display: inline-block;	
+.section-heading {
+    padding-bottom: 10px;
+}
+
+#gender-selector {
+	display: block;	
 	float: none;
-	margin: 0;
+	margin: auto;
 }
 .number-box, .fa.fa-gender {
     font-size: 25px;
     font-weight: 500;
+    display: inline-block;
+    margin-left: 75px;
 }
 .fa-female {
     color: DarkRed;
-    padding:5px;
 }
 .fa-male {
     color: CadetBlue;
-     padding:5px;
 }
 .gender {
     font-weight: 400;     

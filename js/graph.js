@@ -60,7 +60,7 @@ function deriveGraphs(error, lcData) {
          
      }))
      .formatNumber(d3.format("1"));
-      var gender_dim = ndx.dimension(dc.pluck('gender'));
+     
     dc.numberDisplay("#sitting-males")
      .valueAccessor (function(d) {return(d);})
      .group(ndx.groupAll().reduceSum(function(d) {
@@ -81,7 +81,7 @@ function deriveGraphs(error, lcData) {
      // draw pie chart for total pupils    
      
         dc.pieChart("#total-pupil-pie-chart")
-                .height(350)
+                .height(300)
                 .radius(90)
                 .transitionDuration(1500)
                 .dimension(gender_dim)
@@ -108,7 +108,7 @@ function deriveGraphs(error, lcData) {
  
     dc.scatterPlot("#pupil-distribution-chart")
               .width(700)
-                .height(350)
+                .height(300)
                 .x(d3.time.scale().domain([min_date, max_date]))
                 .brushOn(false)
                 .symbolSize(8)
@@ -147,7 +147,7 @@ function deriveGraphs(error, lcData) {
   var compositeChart = dc.compositeChart('#exam-composite-chart');
                 compositeChart
                 .width(700)
-                .height(350)
+                .height(300)
                 .dimension(date_dim)
                 .x(d3.time.scale().domain([min_date, max_date]))
                 .yAxisLabel("No of Pupils")
@@ -178,14 +178,14 @@ function deriveGraphs(error, lcData) {
   // draw donut chart for showing percentage failed  
   
   dc.pieChart("#percentFail-pieChart")
-                .height(350)
+                .height(300)
                 .radius(90)
                 .innerRadius(35)
                 .transitionDuration(1500)
                 .dimension(gender_dim)
                 .group(fail)
                 .label(function(d){return d.value})
-                .legend(dc.legend().x(170).y(155).itemHeight(13).gap(5))
+                .legend(dc.legend().x(170).y(130).itemHeight(13).gap(5))
                 .colors(genderColors)
                 .on('pretransition', function(chart) {
             chart.selectAll('text.pie-slice').text(function(d) {
@@ -195,27 +195,29 @@ function deriveGraphs(error, lcData) {
 //=======STACKED CHART SHOWING TOTAL NUMBERS BY GRADE BY GENDER======= 
   
   // group stacked chart showing numbers that passed  
+  var fail = gender_dim.group().reduceSum(dc.pluck('fail'));
   var pass1 = gender_dim.group().reduceSum(dc.pluck('pass1'));
   var pass2 = gender_dim.group().reduceSum(dc.pluck('pass2'));
   var pass3 = gender_dim.group().reduceSum(dc.pluck('pass3'));
   var pass4 = gender_dim.group().reduceSum(dc.pluck('pass4'));
   var pass5 = gender_dim.group().reduceSum(dc.pluck('pass5'));
   var criteria6 = gender_dim.group().reduceSum(dc.pluck('criteria6'));
-  var fail = gender_dim.group().reduceSum(dc.pluck('fail'));
+  
   
    // draw stacked chart showing numbers of grades by gender 
   
   dc.barChart("#stack-results")
         .width(200)
-        .height(600)
+        .height(500)
         .dimension(gender_dim)
-        .group(pass1, "criterion1")
+        .group(fail, "Failed")
+        .stack(pass1, "criterion1")
          .stack(pass2, "criterion2")
          .stack(pass3, "criterion3")
          .stack(pass4, "criterion4")
          .stack(pass5, "Criterion5")
          .stack(criteria6, "Criterion6")
-          .stack(fail, "Failed")
+          //.stack(fail, "Failed")
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
                 .margins({top: 10, right: 60, bottom: 50, left: 50})
@@ -307,26 +309,26 @@ function deriveGraphs(error, lcData) {
     var maleFail = date_dim.group().reduceSum(passGend('Male'));
     var femaleFail = date_dim.group().reduceSum(passGend('Female')); 
     
-     // draw composite chart for showing annual grades achieved by gender
+     // draw composite chart showing grades achieved annually by gender
     
          var compositeChart = dc.compositeChart('#crit-composite-chart');
                 compositeChart
                 .width(900)
-                .height(600)
+                .height(500)
                 .dimension(date_dim)
                 .x(d3.time.scale().domain([min_date, max_date]))
                 .yAxisLabel("No of Pupils")
                 .xAxisLabel("Year")
-                .legend(dc.legend().x(350).y(10).itemHeight(13).gap(5))
+                .legend(dc.legend().x(350).y(10).itemHeight(10).gap(5))
                 .renderHorizontalGridLines(true)
                 .margins({top: 10, right: 75, bottom: 75, left: 75})
                   .title(function(d){return d.value})
                 .compose([
                    dc.lineChart(compositeChart)
-                    .colors('Aquamarine')
+                    .colors('Pink')
                     .group(femalePass1, "Female Criterion 1"),
                      dc.lineChart(compositeChart)
-                    .colors('Aqua')
+                    .colors('HotPink')
                      .group(malePass1, "Male Criterion 1"),
                    dc.lineChart(compositeChart)
                     .colors('GoldenRod')
@@ -353,29 +355,29 @@ function deriveGraphs(error, lcData) {
                     .colors('Orchid')
                     .group(malePass5, 'Male Criterion 5'),
                     dc.lineChart(compositeChart)
-                    .colors('Brown')
+                    .colors('tan')
                     .group(femalePass6,'Female Criterion 6'),
                     dc.lineChart(compositeChart)
                     .colors('FireBrick')
                     .group(malePass6, 'Male Criterion 6'),
                      dc.lineChart(compositeChart)
-                    .colors('Pink')
+                    .colors('AquaMarine')
                     .group(femaleFail,'Female Fail'),
                     dc.lineChart(compositeChart)
-                    .colors('HotPink')
+                    .colors('Aqua')
                     .group(maleFail, 'Male Fail')
                       ])
                 
                 .brushOn(false);
  
-  //=======DONUT CHARTS SHOWING PERCENTAGE OF GRADES ACHIEVED BY GENDER======= 
+  //=======DONUT CHARTS SHOWING PERCENTAGE GENDER ACHIEVEMENT OF GRADES======= 
   
   //derive groups for charts
-        var criterion1 = gender_dim.group().reduceSum(dc.pluck('criteria1'));
-        var criterion2 = gender_dim.group().reduceSum(dc.pluck('criteria2'));
-        var criterion3 = gender_dim.group().reduceSum(dc.pluck('criteria3'));
-        var criterion4 = gender_dim.group().reduceSum(dc.pluck('criteria4'));
-        var criterion5 = gender_dim.group().reduceSum(dc.pluck('criteria5'));
+        var criterion1 = gender_dim.group().reduceSum(dc.pluck('pass1'));
+        var criterion2 = gender_dim.group().reduceSum(dc.pluck('pass2'));
+        var criterion3 = gender_dim.group().reduceSum(dc.pluck('pass3'));
+        var criterion4 = gender_dim.group().reduceSum(dc.pluck('pass4'));
+        var criterion5 = gender_dim.group().reduceSum(dc.pluck('pass5'));
         var criterion6 = gender_dim.group().reduceSum(dc.pluck('criteria6'));
         
      // draw donut charts for showing percentages achieving grades by gender 
