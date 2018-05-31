@@ -33,9 +33,10 @@
 </head>
 <body>
 <!--========== Section header ==========-->
-    <section class="section-header">
+    <section class="section-header container-fluid">
+        <div class="container-fluid">  
            <h1 class = "text-center">Distribution of Leaving Certificate Results by Gender Republic of Ireland 2000 - 2016</h1>
-             <div class="container-fluid">      
+             
                 <div class="row">
                     <div class="col-xs-12 col-sm-6">
                          <h2 class="section-heading text-center">Total Attending School</h2>
@@ -46,11 +47,11 @@
                          <i class=" fa fa-male fa-gender" aria-hidden="true"></i> <span class = "number-box" id="sitting-males"></span></span>
                     </div>  
                 </div>  
-             </div>
+         </div> 
      </section>
     <!--========== Chart Section ==========-->
     <section class="section">
-        <div class="container-fluid">      
+        <div class="container-fluid wrapper">      
           <div class="row">
               <div class="col-xs-12 col-sm-4 text-center" id="total-pupil-pie-chart" class="custom-chart"><h3>Fig.1 Total Leaving Certificate Pupils 2000-2016</h3></div>
               <div class="col-xs-12 col-sm-8 text-center" id="pupil-distribution-chart" class="custom-chart"><h3>Fig.2 Annual Pupil Distribution by Gender 2000 - 2016</h3></div>
@@ -64,7 +65,7 @@
      <!--========== Chart Section ==========-->
     <section class="section">
         <div class="container">
-           <div class="row">
+           <div class="row wrapper">
                <h2 class="text-center">Results Distribution by Gender</h2>
                  <div class="col-xs-12 col-sm-8 text-center" id= "exam-composite-chart" class = "custom-chart"> <h3>Fig.3 Annual totals of LC Pupils who sat exam 2000-2016</h3></div>   
                  <div class="col-xs-12 col-sm-4 text-center" id="percentFail-pieChart" class="custom-chart"><h3>Fig.4 Gender Percentage of those who failed 2000-2016</h3></div>
@@ -78,7 +79,7 @@
          <!--========== Chart Section ==========-->
     <section class="section">
         <div class="container">
-             <div class="row">
+             <div class="row wrapper">
                  <div class="col-xs-12 col-sm-3 text-center" id="stack-results" class="custom-chart"><h3>Fig.5 All Results by Gender 2000 - 2016</h3></div>  
                  <div class="col-xs-12 col-sm-9 text-center" id="crit-composite-chart" class="custom-chart"><h3>Fig.6 Annual Results by Gender 2000 - 2016</h3></div>  
             </div>
@@ -91,7 +92,7 @@
      <!--========== Chart Section ==========-->
     <section class="section">
         <div class="container">
-           <div class="row">
+           <div class="row wrapper">
               <div><h3 class="section-heading text-center">Fig.7 Percentage Grades by Gender</h3><i class="fa fa-female fa-gender" aria-hidden="true"></i> <span><strong></strong>Female</strong></span>
                          <i class="fa fa-male fa-gender" aria-hidden="true"></i> <span>Male</span></div>
                  <div class="col-xs-12 col-sm-2 text-center" id="percent-pieChart1" class="custom-chart"><h4>Fig.a Criterion 1</h4></div>
@@ -101,9 +102,9 @@
                  <div class="col-xs-12 col-sm-2 text-center" id="percent-pieChart5" class="custom-chart"><h4>Fig.e Criterion 5</h4></div>
                  <div class="col-xs-12 col-sm-2 text-center" id= "percent-pieChart6" class = "custom-chart"> <h4>Fig.f Criterion 6</h4></div>  
             </div>
-            <div class="row">
-              <div class="col-xs-12 col-sm-8 text-center"><p>Fig.7 illustrates that while more male pupils achieve the basic grades, significantly more female pupils achieve the higher grades.</p></div>
-              <div class="col-xs-12 col-sm-4 text-center"> <button type="button" id="criteria_key" class="btn btn-info btn-lg">Hide / Show Criteria Key</button></div>
+            <div class="row wrapper">
+              <div class="col-xs-12  col-sm-8 text-center"><p>Fig.7 illustrates that while more male pupils achieve the basic grades, significantly more female pupils achieve the higher grades.</p></div>
+              <div class="col-xs-12  col-sm-4 text-center"> <button type="button" id="criteria_key" class="btn btn-info btn-lg">Hide / Show Criteria Key</button></div>
         </div>
         </div>
      <!--========== Criteria Key Section ==========-->

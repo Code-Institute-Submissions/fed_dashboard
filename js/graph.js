@@ -116,7 +116,7 @@ function deriveGraphs(error, lcData) {
                 .yAxisLabel("No of Pupils")
                 .xAxisLabel("Year")
                 .title(function (d) {
-                    return d.key[2] + " number " + d.key[1];
+                    return d.key[2] + " number of pupils is " + d.key[1];
                 })
                 .colorAccessor(function (d) {
                     return d.key[2];
@@ -140,8 +140,7 @@ function deriveGraphs(error, lcData) {
          var total_satExam = date_dim.group().reduceSum(dc.pluck('sat_exam'));  
          var maleSatExam = date_dim.group().reduceSum(examGend('Male'));
          var femaleSatExam = date_dim.group().reduceSum(examGend('Female'));        
-                
-        
+  
   // draw composite chart for annual pupil distribution  
   
   var compositeChart = dc.compositeChart('#exam-composite-chart');
@@ -152,10 +151,10 @@ function deriveGraphs(error, lcData) {
                 .x(d3.time.scale().domain([min_date, max_date]))
                 .yAxisLabel("No of Pupils")
                 .xAxisLabel("Year")
-                .legend(dc.legend().x(100).y(50).itemHeight(13).gap(15))
+                .legend(dc.legend().x(100).y(45).itemHeight(13).gap(15))
                 .renderHorizontalGridLines(true)
                 .margins({top: 10, right: 75, bottom: 75, left: 75})
-                .title(function(d) { return d.value; })
+                .title(function(d) { return "Number of pupils is " + d.value; })
                 .compose([
                      dc.lineChart(compositeChart)
                     .colors('black')
@@ -202,7 +201,7 @@ function deriveGraphs(error, lcData) {
   var pass4 = gender_dim.group().reduceSum(dc.pluck('pass4'));
   var pass5 = gender_dim.group().reduceSum(dc.pluck('pass5'));
   var criteria6 = gender_dim.group().reduceSum(dc.pluck('criteria6'));
-  
+ 
   
    // draw stacked chart showing numbers of grades by gender 
   
@@ -216,18 +215,18 @@ function deriveGraphs(error, lcData) {
          .stack(pass3, "criterion3")
          .stack(pass4, "criterion4")
          .stack(pass5, "Criterion5")
-         .stack(criteria6, "Criterion6")
-          //.stack(fail, "Failed")
+         .stack(criteria6, "criteria6")
                 .x(d3.scale.ordinal())
                 .xUnits(dc.units.ordinal)
+                 .title(function(d) { return d.key +" number of pupils is "+ d.value; })
                 .margins({top: 10, right: 60, bottom: 50, left: 50})
                 .yAxisLabel("No of Pupils")
-                .legend(dc.legend().x(144).y(50).itemHeight(10).gap(5))
+                .legend(dc.legend().x(143).y(50).itemHeight(10).gap(3))
                 .xAxisLabel("Gender");
                 
  //=======COMPOSITE LINE CHART SHOWING GRADES ACHIEVED ANNUALLY BY GENDER=======  
  
-    //functions to derive croups
+    //functions to derive groups
     
     function pass1Gend(gender) {
                 return function (d) {
@@ -322,7 +321,7 @@ function deriveGraphs(error, lcData) {
                 .legend(dc.legend().x(350).y(10).itemHeight(10).gap(5))
                 .renderHorizontalGridLines(true)
                 .margins({top: 10, right: 75, bottom: 75, left: 75})
-                  .title(function(d){return d.value})
+                  .title(function(d){return "Number of pupils is " + d.value})
                 .compose([
                    dc.lineChart(compositeChart)
                     .colors('Pink')
@@ -373,12 +372,12 @@ function deriveGraphs(error, lcData) {
   //=======DONUT CHARTS SHOWING PERCENTAGE GENDER ACHIEVEMENT OF GRADES======= 
   
   //derive groups for charts
-        var criterion1 = gender_dim.group().reduceSum(dc.pluck('pass1'));
+        /*var criterion1 = gender_dim.group().reduceSum(dc.pluck('pass1'));
         var criterion2 = gender_dim.group().reduceSum(dc.pluck('pass2'));
         var criterion3 = gender_dim.group().reduceSum(dc.pluck('pass3'));
         var criterion4 = gender_dim.group().reduceSum(dc.pluck('pass4'));
         var criterion5 = gender_dim.group().reduceSum(dc.pluck('pass5'));
-        var criterion6 = gender_dim.group().reduceSum(dc.pluck('criteria6'));
+        var criteria6 = gender_dim.group().reduceSum(dc.pluck('criteria6'));*/
         
      // draw donut charts for showing percentages achieving grades by gender 
   
@@ -388,7 +387,7 @@ function deriveGraphs(error, lcData) {
                 .innerRadius(30)
                 .transitionDuration(1500)
                 .dimension(gender_dim)
-                .group(criterion1)
+                .group(pass1)
                 .label(function(d){return d.value})
                 .legend(dc.legend().x(215).y(155).itemHeight(13).gap(5))
                 .colors(genderColors)
@@ -403,7 +402,7 @@ function deriveGraphs(error, lcData) {
                 .innerRadius(30)
                 .transitionDuration(1500)
                 .dimension(gender_dim)
-                .group(criterion2)
+                .group(pass2)
                 .label(function(d){return d.value})
                 .legend(dc.legend().x(215).y(155).itemHeight(13).gap(5))
                 .colors(genderColors)
@@ -418,7 +417,7 @@ function deriveGraphs(error, lcData) {
                 .innerRadius(30)
                 .transitionDuration(1500)
                 .dimension(gender_dim)
-                .group(criterion3)
+                .group(pass3)
                 .label(function(d){return d.value})
                 .legend(dc.legend().x(215).y(155).itemHeight(13).gap(5))
                 .colors(genderColors)
@@ -433,7 +432,7 @@ function deriveGraphs(error, lcData) {
                 .innerRadius(30)
                 .transitionDuration(1500)
                 .dimension(gender_dim)
-                .group(criterion4)
+                .group(pass4)
                 .label(function(d){return d.value})
                 .legend(dc.legend().x(215).y(155).itemHeight(13).gap(5))
                 .colors(genderColors)
@@ -448,7 +447,7 @@ function deriveGraphs(error, lcData) {
                 .innerRadius(30)
                 .transitionDuration(1500)
                 .dimension(gender_dim)
-                .group(criterion5)
+                .group(pass5)
                 .label(function(d){return d.value})
                 .legend(dc.legend().x(215).y(155).itemHeight(13).gap(5))
                 .colors(genderColors)
@@ -463,7 +462,7 @@ function deriveGraphs(error, lcData) {
                 .innerRadius(30)
                 .transitionDuration(1500)
                 .dimension(gender_dim)
-                .group(criterion6)
+                .group(criteria6)
                 .label(function(d){return d.value})
                 .legend(dc.legend().x(215).y(155).itemHeight(13).gap(5))
                 .colors(genderColors)
