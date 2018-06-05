@@ -4,11 +4,11 @@ describe ("key",function() {
          });
      it ("should hide when shown", function() {
          var slideToggle = "hide";
-    expect(slideToggle).toBe('hide')
+    expect(slideToggle).toBe('hide');
          });
           it ("should show when hidden", function() {
          var slideToggle = "show";
-    expect(slideToggle).toBe('show')
+    expect(slideToggle).toBe('show');
          });
          
 });

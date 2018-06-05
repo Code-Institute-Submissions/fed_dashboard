@@ -1,14 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto 100,200,300,400,500,600,700;|Exo:100,200,300,400,500,600,700');
+
 /*===============general styles==============*/
 body {
     background-color: #e8eded;
 }
-
+h1,h2,h3,h4,h5 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
 h1 {
     font-size: 30px;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     margin: 0;
+    
 }
 h2 {
     font-size: 25px;
@@ -35,23 +40,29 @@ p {
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     font-weight: 400;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 /*===============section styles==============*/
 .section {
 	border-bottom: 3px double white;
-     margin: auto;
+    margin: auto;
     display: block;
+    padding: 0;
 }
 .section-header {
     background-color: #dfe3ee; 
     padding-top: 10px;
     padding-bottom: 10px;
-     margin: auto;
+    margin: auto;
     display: block;
    
 }
+#total-pupil-pie-chart, #pupil-distribution-chart, #exam-composite-chart, #percentFail-pieChart,#stack-results, #crit-composite-chart {
+    text-align: center;
+}
 /*===============gender selector styles==============*/
-#gender-selector {
+#gender-selector, .doughnut-palette {
 	display: block;	
 	float: none;
 	margin: auto;
@@ -61,7 +72,7 @@ p {
     font-size: 25px;
     font-weight: 500;
     display: inline-block;
-    margin-left: 75px;
+    margin-left: 0;
 }
 .fa-female {
     color: DarkRed;
@@ -78,6 +89,7 @@ p {
     border: none;
     color: black;
     font-weight: 400;
+    padding-bottom: 10px;
 }
 /*===============overide bootstrap styles==============*/
 .btn-info:focus {
@@ -92,7 +104,7 @@ p {
     background-color: white;
     font-weight: 700;
     margin: 0;
-    padding: 0;
+    padding-left: 5px;
 }
 /*===============footer styles==============*/
 footer {
@@ -126,16 +138,49 @@ a {
 a:hover{
   	background: #dfe3ee	;  
 }
-.wrapper {
-
-  position: relative;
-   margin: auto;
-  height: 30vh;
-  width: 100vw;
-  display: block;
+ .reveal-5, .replace-4, .replace-5, .replace-7 {
+    display: none;
 }
-.custom-chart {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+
+/*========== hide wide graphs and relative text on screen widths below 768px ==========*/
+
+@media screen and (min-width: 400px) and (max-width: 767px) {
+  #pupil-distribution-chart, #exam-composite-chart, #crit-composite-chart { 
+  display: none;
+  }  
+  .wide-graph, .hide-2, .hide-3, .hide-4,  h3.hide-5, p.hide-5, .change-to-4 {
+     display: none;   
+  } 
+  .replace-4, .replace-5, .replace-7 {
+      display: block;
+  }
+}
+/*========== hide wide graphs  and pie charts and relative text on screen widths below 400px ==========*/
+
+@media screen and (min-width: 0px) and (max-width: 399px) {
+  #total-pupil-pie-chart, #percentFail-pieChart, #percent-pieChart1, #percent-pieChart2, #percent-pieChart3, #percent-pieChart4, #percent-pieChart5, #percent-pieChart6,  #pupil-distribution-chart, #exam-composite-chart, #crit-composite-chart { 
+      display: none; 
+  }
+  .wide-graph, .under-400, .gender-key , h3.hide-5, p.hide-5 {
+     display: none;   
+  } 
+  .reveal-5 {
+      display: block;
+  }
+}
+/*========== style headers and paragraphs of graphs rendered on iPad size screen ==========*/
+
+@media screen and (min-width: 767px) and (max-width: 1023px) {
+    .relocate-to-2, .relocate-to-4, .relocate-to-6, .wide-graph {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    .relocate-to-1, .relocate-to-3, .relocate-to-5 {
+    font-size: 18px;
+    font-family: 'Exo', sans-serif;
+    font-weight: 400; 
+    }
 }
