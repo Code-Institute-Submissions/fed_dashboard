@@ -311,13 +311,13 @@ function deriveGraphs(error, lcData) {
     
          var compositeChart = dc.compositeChart('#crit-composite-chart');
                 compositeChart
-                .width(700)
+                .width(680)
                 .height(400)
                 .dimension(date_dim)
                 .x(d3.time.scale().domain([min_date, max_date]))
                 .yAxisLabel("No of Pupils")
                 .xAxisLabel("Year")
-                .legend(dc.legend().x(605).y(0).itemHeight(10).gap(2))
+                .legend(dc.legend().x(580).y(0).itemHeight(10).gap(2))
                 .renderHorizontalGridLines(true)
                 .margins({top: 10, right: 75, bottom: 75, left: 75})
                   .title(function(d){return "Number of pupils is " + d.value})

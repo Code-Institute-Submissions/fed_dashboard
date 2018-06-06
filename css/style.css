@@ -142,7 +142,7 @@ a:hover{
     display: none;
 }
 
-/*========== hide wide graphs and relative text on screen widths below 768px ==========*/
+/*========== hide wide graphs and relative text on screen widths 400 - 768px ==========*/
 
 @media screen and (min-width: 400px) and (max-width: 767px) {
   #pupil-distribution-chart, #exam-composite-chart, #crit-composite-chart { 

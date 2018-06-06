@@ -27,9 +27,9 @@ text and chart divs were set up with large screens in mind, it was necessary to 
 using jQuery. A media query handles styles for the header and paragraph text. For the smaller screen widths from 766 to 400px, media queries were used to 
 omit the wide graphs and in screen widths below 400px the pie charts (and corresponding text fields) were also omitted. Rather than use jQuery to amend 
 associated text, css styles linked to classes, were applied within the media queries in the form of display none and display block to present appropriate 
-text for the shown chart. It was found that jQuery was overwriting styles applied to elements at previous window sizes..The css mehod provide a simple and 
+text for the shown chart. It was found that jQuery was overwriting styles applied to elements at previous window sizes. The css mehod provides a simple and 
 efficient solution to this problem. 
-The text-center typography from bootstrap is  employed to center text, inckluding icons within the element.  Other properties such as display: block; and 
+The text-center typography from bootstrap is  employed to center text, including icons within the element.  Other properties such as display: block; and 
 inline-block, margin: auto  are all used to centrally position other elements and blocks of text. The bootstrap button class is used for the button to hide 
 / show the criteria key. In addition class names are applied extensively to further define elements and facilitate style targetting. The span element while 
 non-semantic is used on a few occasions to attach text to elements. Comments are also used within all pages to further signify what elements are involved.
@@ -48,8 +48,8 @@ on the date datum. A separate dimension was created for the scatter plot. The gr
 reduceSum. However the same groups were used to aggregate totals in the stacked chart and the doughnut charts resulting in further efficiency in coding. 
 In most case the dc.pluck shortcut was used rather than the return function (d) method, with the exception of a few instances in the composite charts where 
 specific functions were written to total the individual gender type. Within these functions the +d syntax was used to ensure that numbers that may be 
-represented as a string were converted into a number.
-Variable and function names were kept semantic in keeping with what needed to be produced and in relation to the datum being considered.
+represented as a string were converted into a number. (Aside: As additional belt and braces all totals and percentages returned in the charts were cross 
+checked with a spreadsheet analysis).
 Once the dimensions and groups were derived the graphs were easily plotted using the relevant dc-class (e.g. dc.pieChart) and its methods. Height, widths 
 and radii were chosen so that rendered charts would neatly visualise data, bearing in mind they also had to fit within the designated bootstrap column widths. 
 Legends were used were appropriate. Title and label functions were used to show tooltips on the graphs in the browser window. The brushOn was set to false 
@@ -85,7 +85,8 @@ The developer tool was used to inspect elements and apply styles for considerati
 on bootstrap styles that needed to be over-ridden. The console section was used to traverse the dom, to list the various elements to check classes and ids.
 This enabled non repetition when deriving new ids or classes and also sourced the position of redundant ones to be deleted.  It had been considered to use 
 the replace.with method to modify text paragraphs on screen resize but the text method was found to be a more effective solution as the replace method was 
-removing data from the dom that was needed when the screen width increased again. There was also limitations to this method also previous elements were 
-being overwritten despite using different class names.  This was resolved by using css. It was also considered to use the add.class and remove.class method 
-to apply styles to the elements. However for this particular project the css styles in the stylesheet were adequate and encumbering the project with extra 
-jQuery methods in this context was not necessary. Styles were added through the console for viewing, but once adopted were copied into the css style sheet.
+removing data from the dom that was needed when the screen width increased again. There were limitations to this method also, as previous elements were 
+being overwritten despite using different class names.  This was resolved by using css as outlined above. It was also considered to use the add.class and 
+remove.class method to apply styles to the elements. However for this particular project the css styles in the stylesheet were adequate and encumbering the project with extra 
+jQuery methods in this context was deemed not necessary. Styles were added through the console for viewing, but once adopted were copied into the css style 
+sheet.
