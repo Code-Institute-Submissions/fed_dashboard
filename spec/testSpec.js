@@ -1,4 +1,4 @@
-describe ("key",function() {s
+describe ("key",function() {
      it("should exist", function() {
              expect(key).toBe(key);
          });
