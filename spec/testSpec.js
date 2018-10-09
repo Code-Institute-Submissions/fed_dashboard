@@ -1,4 +1,4 @@
-describe ("key",function() {
+describe ("Criteria key toggle",function() {
      it("should exist", function() {
              expect(key).toBe(key);
          });
@@ -10,5 +10,20 @@ describe ("key",function() {
          var slideToggle = "show";
     expect(slideToggle).toBe('show');
          });
-         
 });
+
+describe('Numbers that sat exam', function () {
+   it("should exist", function() {
+         expect(examGend("Male")).toBeDefined();
+     });  
+  it('should be positive', function () {
+      test = examGend();
+    expect(test).toBeGreaterThan(-1);
+  });
+});
+// describe('Numbers that passed exam', function () {
+//   it('should be positive', function () {
+//       var test = pass1Gend();
+//     expect(test).toBeGreaterThan(-1);
+//   });
+// });
