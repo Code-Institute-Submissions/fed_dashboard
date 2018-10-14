@@ -205,6 +205,12 @@ jQuery methods in this context was deemed not necessary.
 Styles were added through the console for viewing, but once adopted were copied into the css style sheet.    
 Some jasmine tests are applied to the criteria key legend section which shows or hides on button click and to verify
 that some of the json data exists and thast values are positive.
+While testing the examGend and passGend/fail functions with jasmine, calling these functions within the test was 
+giving an undefined error. As the original functions are scoped within the deriveGraphs function it was decided 
+to use another approach. The json file was loaded into the testSpec file and the data relating to the previously 
+mentioned functions then tested. Using this approach ensured that function scope was not an issue and if the data 
+passed the test then there is no issue with the functions that use this data.
+
 ## Deployment ##
 The repo for this application is available at https://github.com/vmcggh18/fed_dashboard.  
 The repo can be downloaded as a zip for installation into a local ide. When installed locally just select the 
