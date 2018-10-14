@@ -1,6 +1,7 @@
 queue()
         .defer(d3.json, "data/lcdata.json")
         .await(deriveGraphs);
+        
 function deriveGraphs(error, lcData) {
     var ndx = crossfilter(lcData);
      lcData.forEach(function (d) {
@@ -149,6 +150,7 @@ function deriveGraphs(error, lcData) {
                  } 
                 };
             }
+            
          var total_satExam = date_dim.group().reduceSum(dc.pluck('sat_exam'));  
          var maleSatExam = date_dim.group().reduceSum(examGend('Male'));
          var femaleSatExam = date_dim.group().reduceSum(examGend('Female'));        
@@ -462,7 +464,5 @@ function deriveGraphs(error, lcData) {
                 return dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2*Math.PI) * 100) + '%';
             });
         });   
-  
-                
-  dc.renderAll();              
+  dc.renderAll();      
 }

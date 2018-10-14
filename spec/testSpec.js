@@ -1,3 +1,4 @@
+//test that criteria key toggles hide/reveal
 describe ("Criteria key toggle",function() {
      it("should exist", function() {
              expect(key).toBe(key);
@@ -11,19 +12,52 @@ describe ("Criteria key toggle",function() {
     expect(slideToggle).toBe('show');
          });
 });
+// load data as an object for testing
+$.getJSON("./data/lcdata.json", function (data) {
+    
+// verify numbers exist and are positive
 
 describe('Numbers that sat exam', function () {
-   it("should exist", function() {
-         expect(examGend("Male")).toBeDefined();
-     });  
-  it('should be positive', function () {
-      test = examGend();
-    expect(test).toBeGreaterThan(-1);
-  });
+  it("should exist", function() {
+      test = "sat_exam";
+         expect(test).toBeDefined();
+     });
+        it('must be positive', function() {
+    for (var i = 0; i < data.length; i++){
+        if (data[i].sat_exam >-1){
+         test = data[i].sat_exam
+         expect(test).toBeGreaterThan(-1);
+}
+}
 });
-// describe('Numbers that passed exam', function () {
-//   it('should be positive', function () {
-//       var test = pass1Gend();
-//     expect(test).toBeGreaterThan(-1);
-//   });
-// });
+});
+describe('Numbers that passed exam', function () {
+  it("should exist", function() {
+      test = "criteria1";
+         expect(test).toBeDefined();
+     });
+        it('must be positive', function() {
+    for (var i = 0; i < data.length; i++){
+        if (data[i].criteria1 >-1){
+         test = data[i].sat_exam
+         expect(test).toBeGreaterThan(-1);
+}
+}
+});
+});
+describe('Numbers that failed exam', function () {
+  it("should exist", function() {
+      test = "criteria1";
+         expect(test).toBeDefined();
+     });
+     it('must be positive', function() {
+    for (var i = 0; i < data.length; i++){
+        var fail = data[i].sat_exam-data[i].criteria1;
+        if (fail >-1){
+         test = fail
+         expect(test).toBeGreaterThan(-1);
+}
+}
+});
+});
+});
