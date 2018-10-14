@@ -97,11 +97,11 @@ data, bearing in mind they also have to fit within the designated bootstrap colu
 Legends are used were appropriate. Title and label functions are used to show tooltips on the graphs in the 
 browser window. The brushOn is set to false to ensure interactive elements such as tooltips stay enabled.
 
-Comments are used within all pages to decsribe a coding section or to signify to other parties what elements are 
+Comments are used within all pages to describe a coding section or to signify to other parties what elements are 
 involved.  
 ## Features ##
 The features are briefly described below
-### Existing Features###
+### Existing Features ###
 
 *Feature 1* A number selector in the top section is incorporated to show total number of pupils by gender over 
 the 17 year time period. Clicking on this isolates either male or female and is interactive across the composite
@@ -193,7 +193,7 @@ For the smaller screen widths from 766 to 400px, media queries were used to omit
 widths below 400px the pie charts (and corresponding text fields) were also omitted. Rather than use jQuery to 
 amend associated text, css styles linked to classes, were applied within the media queries in the form of display 
 none and display block to present appropriate text for the shown chart. It was found that jQuery was overwriting 
-styles applied to elements at previous window sizes. The css mehod provides a simple and efficient solution to 
+styles applied to elements at previous window sizes. The css method provides a simple and efficient solution to 
 this problem.   
 It had been considered to use the replace.with method to modify text paragraphs on screen resize but the text 
 method was found to be a more effective solution as the replace method was removing data from the dom that was 
@@ -217,10 +217,10 @@ The repo can be downloaded as a zip for installation into a local ide. When inst
 home page and click run to view in the browser.      
 Alternatively the application can be viewed as a github page at https://vmcggh18.github.io/fed_dashboard/
 
-## Credits##
+## Credits ##
 
 ### Content ###
-[Creative Commons Attribution 4.0](ttps://creativecommons.org/licenses/by/4.0/legalcode)  
+[Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)  
 Creative commons license for the chosen dataset.  
 ### Media ###
 [The dataset source](https://data.gov.ie/dataset)  
