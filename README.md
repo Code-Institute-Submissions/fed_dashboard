@@ -1,6 +1,5 @@
-# Project Name #
-fed_Dashboard
-## Overview ##
+# fed_Dashboard
+
 This application creates an interactive Frontend Development Website in the form of a Dashboard. Fundamentally it 
 analyses data in relation to results achieved by leaving cert students in Ireland over a 17 year period and presents
 it in a simple interactive visual format. The dominant theme is achievement across genders.  
@@ -103,51 +102,54 @@ involved.
 The features are briefly described below
 ### Existing Features ###
 
-*Feature 1* A number selector in the top section is incorporated to show total number of pupils by gender over 
+- Feature 1 - A number selector in the top section is incorporated to show total number of pupils by gender over 
 the 17 year time period. Clicking on this isolates either male or female and is interactive across the composite
 and scatter plots and number boxes. Select all shows both genders together.  
-*Feature 2* The header section also incorporates gender number boxes(with associated fontawesome icons). The gender 
+- Feature 2 - The header section also incorporates gender number boxes(with associated fontawesome icons). The gender 
 number boxes represent the total numbers of male and female pupils sitting the examination and are interactive
 with all graphs.  
-*Feature 3* In section 2 The figure 1 pie chart complements the number selector element, by showing the percentage 
+- Feature 3-  In section 2 The figure 1 pie chart complements the number selector element, by showing the percentage 
 values. On hover a tooltip shows the actual numbers. This chart is interactive with the composite and scatter charts.  
-*Feature 4* Also in section 2 The fig 2. scatter plot further complements this data and illustrates any variance 
+- Feature 4 - Also in section 2 The fig 2. scatter plot further complements this data and illustrates any variance 
 in the annual numbers attending school by gender. On hover a tooltip reveals the actual number.  
-*Feature 5* In section 3 Fig 3 uses a composite line graph to illustrate the numbers of pupils by gender that sat the 
+- Feature 5 - In section 3 Fig 3 uses a composite line graph to illustrate the numbers of pupils by gender that sat the 
 examination. Again there is tooltip and interactive functionality.  
-*Feature 6* In section 3 figure 4 uses a donut pie chart to illustrate the percentage fail across genders of those 
+- Feature 6 - In section 3 figure 4 uses a donut pie chart to illustrate the percentage fail across genders of those 
 who did fail. Again there is tooltip and interactive functionality. For example clicking on the male slice to isolate
 the males in the other charts, reveals that in 2015, of 26369 males that sat the exam, 1205 failed to achieve the pass 
 criterion.  
-*Feature 7* In section 4 figure 5 is a stacked barchart illustrating the different pass criteria across all genders.
+- Feature 7 - In section 4 figure 5 is a stacked barchart illustrating the different pass criteria across all genders.
 It complements figures 4, 6 and 7 which all present similar information in a different visual format. As with all 
 the crossfiter charts tooltip and interactive functionality exists.  
-*Feature 8*  In section 4 figure 6 presents the pass criteria across the genders on an annual basis as a composite 
+- Feature 8 -  In section 4 figure 6 presents the pass criteria across the genders on an annual basis as a composite 
 line graph allowing trends to be viewed and analysed. Tooltips and interactive functionality allow the different
 lines to be viewed individually and thus data easily obtained.  
-*Feature 9* Fig 7 in section 5 presents each pass criterion in donut form and is an extension of figure 4. For example
+- Feature 9 - Fig 7 in section 5 presents each pass criterion in donut form and is an extension of figure 4. For example
 fig f. shows that 58.6% (33779) of females achieved the highest grades over the time period, as compared to 40.4% 
 (22868) of male pupils.  
-*Feature 10* Section 6 contains the criteria key legend defining what each result criterion is. It can be revealed 
+- Feature 10 - Section 6 contains the criteria key legend defining what each result criterion is. It can be revealed 
 or hidden by the click of a button in section 5.   
-*Feature 11* The final footer section 7 contains details of the license covering the dataset. There is an icon to 
-download a summary pdf page of the license and a link to the full copy of the license on the web.      
+- Feature 11 - The final footer section 7 contains details of the license covering the dataset. There is an icon to 
+download a summary pdf page of the license and a link to the full copy of the license on the web. 
+
 ### Features left to implement ### 
-When additional information in relation to results achievement by subject is made available the dashboard could be 
-extended to include cross gender analysis by subject. It might also be useful to conduct analysis by age.  
-Mobile responsiveness is currently an issue with dc crossfilter charts. Work is being done within the development 
+- When additional information in relation to results achievement by subject is made available the dashboard could be 
+extended to include cross gender analysis by subject. 
+- It might also be useful to conduct analysis by age.  
+- Mobile responsiveness is currently an issue with dc crossfilter charts. Work is being done within the development 
 community on chart responsiveness and solutions when designed, completed, and fully tested could be adopted to
 further enhance the dashboard in the future.
+
 ## Technologies used ##
-[json validator and formatter tool](https://jsonformatter.curiousconcept.com/)     
-The json format was authenticated using a json validator and formatter tool.     
+- [json validator and formatter tool](https://jsonformatter.curiousconcept.com/)     
+ - The json format was authenticated using a json validator and formatter tool.     
 This dashboard incorporates html, css and javascript mainly in the form of libraries.   
-[dc - crossfilter files](https://cdnjs.com/libraries)   
-The urls for these files were retrieved using wget and loaded into the relevent static/ directories. Once
+- [dc - crossfilter files](https://cdnjs.com/libraries)   
+    - The urls for these files were retrieved using wget and loaded into the relevent static/ directories. Once
 downloaded to the css and javascript dirs, they were referenced in the appropriate section of the html file using
 script tags.     
-[Bootswatch Theme](https://bootswatch.com/)      
-A cosmo theme was chosen and the file copied into the static/css dir by using wget with the url in the bash 
+- [Bootswatch Theme](https://bootswatch.com/)      
+    - A cosmo theme was chosen and the file copied into the static/css dir by using wget with the url in the bash 
 terminal. This facilitates the use of the bootstrap grid system , enabling a responsive design approach for divs 
 used in the dashboard. However as d3.js charts are not responsive, being built for larger size screens such as desktops, 
 viewing this dashboard on screens smaller than 1200px in width will result in loss of responsiveness. For the 
@@ -157,19 +159,20 @@ properties such as display: block; and inline-block, margin: auto  are all used 
 elements and blocks of text. The bootstrap button class is used for the button to hide / show the criteria key. 
 In addition class names are applied extensively to further define elements and facilitate style targetting. The 
 span element while non-semantic is used on a few occasions to attach text to elements.  
-[Fontawesome](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css)  
-Fontawesome icons were used in the dashboard, to visualise the genders.      
-[jQuery:](https://jquery.com/)     
-jQuery methods  are used to toggle the criteria key paragraphs hidden or revealed. A mouse over event is used to 
+- [Fontawesome](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css)  
+    - Fontawesome icons were used in the dashboard, to visualise the genders.      
+- [jQuery:](https://jquery.com/)     
+    - jQuery methods  are used to toggle the criteria key paragraphs hidden or revealed. A mouse over event is used to 
 fade the button on mouse enter mouse leave.  
 Another method uses the window resize function which is used in conjunction with the window.width method to modify 
 text within the dom. The text method is used to replace or maintain text depending on the class and screen width.    
 The document.ready function is used in the script file to ensure that the page is fully loaded before manipulations 
 take place using jQuery.    
-[Jasmine Framework:](https://cdnjs.com/libraries/jasmine)  
-The jasmine framework is used to to perform some jasmine tests on the toggle hide/reveal feature. It is also used 
+- [Jasmine Framework:](https://cdnjs.com/libraries/jasmine)  
+    - The jasmine framework is used to to perform some jasmine tests on the toggle hide/reveal feature. It is also used 
 to test that some json data exists and that values are positive. The jasmine framework files are loaded into the
 index file.  
+
 ## Testing ##
 Testing was mainly done by manually writing and running the code to view the output. The developer tool was used 
 to inspect elements and apply styles for consideration. The elements section was used to inspect the div layout 
@@ -186,9 +189,9 @@ challenges to use css and javascript to manipulate elements within the dom, as d
 The dashboard will behave as expected on screens larger in width (in the 1200px region). It should look and work 
 reasonably well on iPad pro and iPad screen sizes as an effort was made to stack columns so charts could fit the 
 screen size.  
-For the iPad size screen it was decided to stack all chart divs to ensure good readability. As text 
-and chart divs were set up with large screens in mind, it was necessary to relocate header and paragraph text to 
-suit the graphs, for the iPad size, using jQuery. A media query handles styles for the header and paragraph text.  
+For the iPad size screen it was decided to stack all chart divs to ensure good readability. As text and chart divs 
+were set up with large screens in mind, it was necessary to relocate header and paragraph text to suit the graphs, 
+for the iPad size, using jQuery. A media query handles styles for the header and paragraph text.    
 For the smaller screen widths from 766 to 400px, media queries were used to omit the wide graphs and in screen 
 widths below 400px the pie charts (and corresponding text fields) were also omitted. Rather than use jQuery to 
 amend associated text, css styles linked to classes, were applied within the media queries in the form of display 
@@ -220,21 +223,21 @@ Alternatively the application can be viewed as a github page at https://vmcggh18
 ## Credits ##
 
 ### Content ###
-[Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)  
+- [Creative Commons Attribution 4.0](https://creativecommons.org/licenses/by/4.0/legalcode)  
 Creative commons license for the chosen dataset.  
 ### Media ###
-[The dataset source](https://data.gov.ie/dataset)  
+- [The dataset source](https://data.gov.ie/dataset)  
 Published by the Department of Education and Skills.  
 
 ### Acknowledgements ###
-Code Institute:  
+- Code Institute:  
 I received inspiration for this project through following the tutorials from Code Institute, in particular Module 
 5, Interactive Frontend Development.  
-[jQuery](https://api.jquery.com/)  
+- [jQuery](https://api.jquery.com/)  
 The jQuery API documentation was consulted in relation to window resize and text methods, loading json data and 
 mouse methods.      
-[Jasmine](https://jasmine.github.io/2.0/introduction.html)  
+- [Jasmine](https://jasmine.github.io/2.0/introduction.html)  
 The jasmine documentation was consulted in relation to syntax for testing javascript code.  
-[Tutorialspoint](https://www.tutorialspoint.com/dcjs/dcjs_introduction_to_crossfilter.htm)  
+- [Tutorialspoint](https://www.tutorialspoint.com/dcjs/dcjs_introduction_to_crossfilter.htm)  
 The tutorialspoint dc.js Introduction to crossfilter tutorial was consulted during this project to get an overview
 of crossfilter.
